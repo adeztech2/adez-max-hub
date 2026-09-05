@@ -491,6 +491,21 @@
     max-width:640px;
   }
 
+  /* SMM QUICK ORDER */
+  .order-panel{ display:grid; grid-template-columns:1.05fr 0.95fr; gap:32px; align-items:start; }
+  @media (max-width:760px){ .order-panel{ grid-template-columns:1fr; } }
+  .order-card{ border:1px solid var(--line); background:var(--bg-panel); padding:28px; }
+  .order-card h3{ font-size:1.15rem; margin-bottom:8px; }
+  .order-card p{ color:var(--text-dim); font-size:0.9rem; margin-bottom:20px; }
+  .order-form{ display:flex; flex-direction:column; gap:14px; }
+  .order-form label{ display:block; color:var(--text-dim); font-size:0.82rem; margin-bottom:6px; }
+  .order-form input,.order-form select{ width:100%; background:#04070d; border:1px solid var(--line); border-radius:5px; padding:11px 14px; color:var(--text); font:0.92rem 'IBM Plex Sans',sans-serif; }
+  .order-form input:focus,.order-form select:focus{ outline:none; border-color:var(--blue); }
+  .order-form button{ background:var(--blue); color:#fff; border:0; border-radius:5px; padding:13px; font-weight:600; cursor:pointer; }
+  .order-form button:hover{ background:var(--blue-bright); }
+  .order-status{ min-height:22px; color:#5fe3a1; font-size:0.86rem; }
+  .order-note{ border-left:2px solid var(--blue); padding:16px 18px; background:#04070d; color:var(--text-dim); font-size:0.9rem; line-height:1.7; }
+
   /* CONTACT FORM */
   .contact-panel{ grid-template-columns:1fr 0.85fr; align-items:start; }
   .contact-form{ display:flex; flex-direction:column; gap:14px; }
@@ -701,4 +716,82 @@
     <div class="wrap">
       <div><strong>4</strong>Core services</div>
       <div><strong>24/7</strong>Support line</div>
-      <div><strong
+      <div><strong>3</strong>Growth packages</div>
+    </div>
+  </div>
+
+  <section id="pricing" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="eyebrow mono">Pricing</div><h2>Social Media Boost</h2></div>
+        <p>Practical support to help your brand show up consistently, reach the right audience, and turn attention into momentum.</p>
+      </div>
+      <div class="pricing-group">
+        <div class="group-title">SOCIAL MEDIA BOOST · MONTHLY PLANS</div>
+        <div class="plans">
+          <article class="plan">
+            <h3>Starter</h3>
+            <div class="price">KES 15,000 <span>/mo</span></div>
+            <ul><li>Profile and content audit</li><li>8 branded posts per month</li><li>Platform setup and content direction</li><li>Monthly performance summary</li></ul>
+            <a class="plan-btn" href="https://wa.me/254111783552?text=Hi%20ADEZ%20MAX%20HUB%2C%20I%27m%20interested%20in%20the%20Social%20Media%20Boost%20Starter%20plan%20at%20KES%2015%2C000%2Fmo.">Ask about Starter</a>
+          </article>
+          <article class="plan featured">
+            <div class="badge">POPULAR</div><h3>Growth</h3>
+            <div class="price">KES 30,000 <span>/mo</span></div>
+            <ul><li>Everything in Starter</li><li>16 branded posts and captions</li><li>Audience growth and engagement support</li><li>Campaign optimization and reporting</li></ul>
+            <a class="plan-btn" href="https://wa.me/254111783552?text=Hi%20ADEZ%20MAX%20HUB%2C%20I%27m%20interested%20in%20the%20Social%20Media%20Boost%20Growth%20plan%20at%20KES%2030%2C000%2Fmo.">Ask about Growth</a>
+          </article>
+          <article class="plan">
+            <h3>Pro</h3>
+            <div class="price">KES 55,000 <span>/mo</span></div>
+            <ul><li>Everything in Growth</li><li>24 posts plus short-form content direction</li><li>Paid campaign planning and optimization</li><li>Weekly insights and priority support</li></ul>
+            <a class="plan-btn" href="https://wa.me/254111783552?text=Hi%20ADEZ%20MAX%20HUB%2C%20I%27m%20interested%20in%20the%20Social%20Media%20Boost%20Pro%20plan%20at%20KES%2055%2C000%2Fmo.">Ask about Pro</a>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="order" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="eyebrow mono">SMM quick order</div><h2>Launch your next boost.</h2></div>
+        <p>Send your platform, post link, and quantity. Our team will review the request and confirm fulfillment before processing.</p>
+      </div>
+      <div class="order-panel">
+        <div class="order-card">
+          <h3>Request an SMM order</h3>
+          <p>Use a public post, profile, reel, or video link so the team can verify the target.</p>
+          <form class="order-form" id="smmOrderForm">
+            <div><label for="smm-service">Service</label><select id="smm-service" required><option value="Instagram Likes">Instagram Likes</option><option value="Instagram Followers">Instagram Followers</option><option value="TikTok Views">TikTok Views</option><option value="TikTok Followers">TikTok Followers</option><option value="YouTube Views">YouTube Views</option></select></div>
+            <div><label for="smm-link">Target link</label><input id="smm-link" type="url" placeholder="https://…" required></div>
+            <div><label for="smm-quantity">Quantity</label><input id="smm-quantity" type="number" min="10" step="1" placeholder="1000" required></div>
+            <div><label for="smm-contact">WhatsApp or email</label><input id="smm-contact" type="text" placeholder="How should we confirm?" required></div>
+            <button type="submit">Submit order request</button>
+            <div class="order-status" id="smmOrderStatus" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+        <div class="order-note"><strong>What happens next?</strong><br>We verify the link and quantity, confirm the current rate, then process the order through our SMM fulfillment workflow. You can also <a href="https://wa.me/254111783552?text=Hi%20ADEZ%20MAX%20HUB%2C%20I%20want%20to%20place%20an%20SMM%20order" style="color:var(--blue-bright)">chat on WhatsApp</a> for a faster confirmation.</div>
+      </div>
+    </div>
+  </section>
+</main>
+<script>
+  var smmSupabase = window.supabase && supabase.createClient("https://zfuknpqadtmpzqchioze.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6ZnVrbnBxYWR0bXB6cWNob2l6ZSIsInJvbGUiOiJhbm9uIiwiaWF0IjoxNzg4NjMzNDUsImV4cCI6MjEwNDIxMjM0NX0.r46h-pVMUC4XeWJJEJeSUaGkQjYI_Gjylu0f0KXneS8");
+  document.getElementById('smmOrderForm').addEventListener('submit', async function(event){
+    event.preventDefault();
+    var status = document.getElementById('smmOrderStatus');
+    var service = document.getElementById('smm-service').value;
+    var link = document.getElementById('smm-link').value.trim();
+    var quantity = document.getElementById('smm-quantity').value;
+    var contact = document.getElementById('smm-contact').value.trim();
+    status.textContent = 'Submitting request…';
+    if (!smmSupabase){ status.textContent = 'Please contact us on WhatsApp to place this order.'; return; }
+    var result = await smmSupabase.from('leads').insert({ name:'SMM order request', contact:contact, service:service, message:'Quantity: ' + quantity + '\\nTarget: ' + link });
+    if (result.error){ status.textContent = 'Could not submit online. Please use WhatsApp instead.'; return; }
+    status.textContent = 'Request received. We will confirm the rate and fulfillment shortly.';
+    event.target.reset();
+  });
+</script>
+</body>
+</html>
